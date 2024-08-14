@@ -3,7 +3,7 @@
   hosts: all
 
   vars:
-    upgrade_ios_version: 15.12.1(Cisco Modeling Labs)
+    upgrade_ios_version: 16.12.1
 
   tasks:
     - name: Check Current Version
