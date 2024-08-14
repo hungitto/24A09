@@ -1,0 +1,19 @@
+---
+- name: Check version IOS
+  hosts: all
+
+  vars:
+    upgrade_ios_version: 16.12.1
+
+  tasks:
+    - name: Check Current Version
+      ios_facts:
+    
+    - debug:
+        msg:
+        - "Current version is {{ ansible_net_version }}"
+    - debug:
+        msg:
+        - "Image is not compliant and need to be upgraded"
+      
+      when: ansible_net_version != upgrade_ios_version
